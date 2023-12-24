@@ -1,6 +1,6 @@
 import React from 'react'
 import TopNav from '../components/TopNav'
-import HeroBlog from '../components/heroBlog'
+import HeroBlog from '../components/HeroBlog'
 
 function Home() {
   return (
