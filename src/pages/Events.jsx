@@ -54,13 +54,13 @@ function Events() {
   return (
     <div className='bg-neutral-900 w-[100vw] min-h-screen flex flex-col'>
         <TopNav />
-        <body className="content flex flex-col self-start px-4 sm:self-center max-w-sm">
+        <div className="content flex flex-col self-start px-4 sm:self-center max-w-sm">
             {eventData.map((eventEl) =>{
                 return(
                     <EventList eventInfo={eventEl} key={eventEl.name}/>
                 )
             })}
-        </body>
+        </div>
     </div>
   )
 }

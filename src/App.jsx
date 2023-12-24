@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Events from './pages/Events'
 import PageNotFound from './pages/PageNotFound'
+import EventDetails from './pages/EventDetails'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="events" element={<Events/>} />
+        <Route path="event-details" element={<EventDetails/>} />
         <Route path="*" element={<PageNotFound/>} />
       </Routes>
     </BrowserRouter>
