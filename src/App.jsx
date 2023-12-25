@@ -14,9 +14,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route index path="/" element={<Home/>} />
         <Route path="events" element={<Events/>}>
-          <Route index path='future' element={<FutureEvents/>}></Route>
+          <Route path='future' element={<FutureEvents/>}></Route>
           <Route path='past' element={<PastEvents/>}></Route>
         </Route>
         <Route path="event-details" element={<EventDetails/>} />

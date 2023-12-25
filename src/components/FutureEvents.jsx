@@ -29,7 +29,7 @@ const eventData = [
             moreInfo: "http://agitated-span.biz",
             tickets:"http://glittering-honeybee.net",
         }, 
-        heroImg: "https://i.pinimg.com/564x/ee/6f/a3/ee6fa30c2348a7a3bd3b177d3acb7491.jpg", 
+        heroImg: "https://i.pinimg.com/564x/c3/80/54/c3805456002454d98190123b74c1078e.jpg", 
         gallery: ["http://placeimg.com/640/480/nature, http://placeimg.com/640/480/transport, http://placeimg.com/640/480/transport "]
     },
     {
@@ -44,7 +44,7 @@ const eventData = [
             moreInfo: "http://agitated-span.biz",
             tickets:"http://glittering-honeybee.net",
         }, 
-        heroImg: "https://i.pinimg.com/564x/a5/e5/45/a5e54504423a1488f14118944204c659.jpg", 
+        heroImg: "https://i.pinimg.com/564x/10/f2/4f/10f24f8934c4e9f6941431972879665d.jpg", 
         gallery: ["http://placeimg.com/640/480/nature, http://placeimg.com/640/480/transport, http://placeimg.com/640/480/transport "]
     }
 ]
