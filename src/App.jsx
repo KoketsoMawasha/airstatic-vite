@@ -7,13 +7,18 @@ import Home from './pages/Home'
 import Events from './pages/Events'
 import PageNotFound from './pages/PageNotFound'
 import EventDetails from './pages/EventDetails'
+import PastEvents from './components/PastEvents'
+import FutureEvents from './components/FutureEvents'
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="events" element={<Events/>} />
+        <Route path="events" element={<Events/>}>
+          <Route index path='future' element={<FutureEvents/>}></Route>
+          <Route path='past' element={<PastEvents/>}></Route>
+        </Route>
         <Route path="event-details" element={<EventDetails/>} />
         <Route path="*" element={<PageNotFound/>} />
       </Routes>

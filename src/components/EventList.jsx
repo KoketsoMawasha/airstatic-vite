@@ -7,7 +7,7 @@ function EventList({eventInfo}) {
     <a href={eventInfo?.links.moreInfo}>
         <div className=' flex w-full justify-between max-w-md py-3'>
             <div className="event-heroImg w-1/2">
-            <img src={eventInfo?.heroImg} alt={"Airstatic image"} className='w-full rounded-md object-contain' />
+            <img src={eventInfo?.heroImg} alt={"Airstatic image"} className='w-40  rounded-md object-contain' />
             </div>
             <div className="list-content w-1/2 ml-2 flex flex-col justify-start">
                 <div className="list-copy">
