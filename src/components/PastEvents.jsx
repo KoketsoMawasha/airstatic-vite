@@ -57,11 +57,11 @@ const eventData = [
 
 function PastEvents() {
   return (
-    <>
+    <ul>
       {eventData.map((eventEl) => {
-        return <EventList eventInfo={eventEl} key={eventEl.name} />;
+        return <EventList eventInfo={eventEl} tense="past" key={eventEl.name} />;
       })}
-    </>
+    </ul>
   );
 }
 

@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
+
 import Home from './pages/Home'
 import Events from './pages/Events'
 import PageNotFound from './pages/PageNotFound'
@@ -14,8 +14,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index path="/" element={<Home/>} />
+        <Route path="/" element={<Home/>} />
+        <Route path='events/future/:id' element={<EventDetails />}/>
+        <Route path='events/past/:id' element={<EventDetails />}/>
         <Route path="events" element={<Events/>}>
+          <Route index element={<Navigate to={'future'} replace={true} />}></Route>
           <Route path='future' element={<FutureEvents/>}></Route>
           <Route path='past' element={<PastEvents/>}></Route>
         </Route>

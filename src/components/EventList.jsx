@@ -1,10 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import EventDetails from '../pages/EventDetails'
+import { NavLink } from 'react-router-dom'
 
-function EventList({eventInfo}) {
+
+
+function EventList({eventInfo, tense}) {
+    console.log(eventInfo)
   return (
-    <a href={eventInfo?.links.moreInfo}>
+    <NavLink to={`:${eventInfo.id}`}>
         <div className=' flex w-full justify-between max-w-md py-3'>
             <div className="event-heroImg w-1/2">
             <img src={eventInfo?.heroImg} alt={"Airstatic image"} className='w-40  rounded-md object-contain' />
@@ -23,7 +27,7 @@ function EventList({eventInfo}) {
                 </div>
         </div>
     </div>
-    </a>
+    </NavLink>
   )
 }
 

@@ -1,19 +1,21 @@
 [
-    {
-        "id": 1, 
-        "name": {},
-        "address": {},
-        "date": {},
-        "links": {},
-        "media": {}
-    }, 
-    {
-        "id": 2, 
-        "name": {},
-        "address": {},
-        "date": {},
-        "links": {},
-        "media": {}
-    } 
-
+  {
+    "id": 1,
+    "name": "VDUB Camp Festival 2024",
+    "summary": "Vdub Camp Fest is the biggest VAG themed South African annual event for enthusiasts of all things German. The pilgrimage attracts thousands of people who love extraordinary cars, modern entertainment and the outdoor lifestyle. This two day event is a highlight on the national social and motor industry calendar, and a benchmark for other car shows in Africa.",
+    "address": "1 Chris Hani Way, Bela-Bela, 0480, South Africa",
+    "date": "Friday February 3",
+    "links": {
+      "map": "https://www.google.com/maps/dir/?api=1&destination=-24.8865961464909,28.2912669465576",
+      "tickets": "https://www.quicket.co.za/events/181258-vdub-camp-festival-2023/#/about"
+    },
+    "media": {
+      "banner": "https://scontent.fjnb11-1.fna.fbcdn.net/v/t31.18172-8/1980406_718721484817161_2383619438027902691_o.jpg?_nc_cat=100&ccb=1-7&_nc_sid=4dc865&_nc_ohc=5QUm1uRQ1KcAX-BPoaK&_nc_ht=scontent.fjnb11-1.fna&oh=00_AfB5pw0bGDP-4a449zmeJi36xr7sKjH9LzovSF3jb8cNUg&oe=65B21C96",
+      "gallery": [
+        "https://scontent.fjnb11-1.fna.fbcdn.net/v/t1.18169-9/10523602_772868592799788_2122085207402747774_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=4dc865&_nc_ohc=O4qk34Nzb8EAX-SprgL&_nc_ht=scontent.fjnb11-1.fna&oh=00_AfCpTQybgeMfvvz20WijQ16OI0D85imP1_RnMTxdEp2aHQ&oe=65B22307",
+        "https://scontent.fjnb11-1.fna.fbcdn.net/v/t1.6435-9/58441264_10211266845425237_7416618263389405184_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=2be8e3&_nc_ohc=73VVZA0AzwIAX81b1U4&_nc_ht=scontent.fjnb11-1.fna&oh=00_AfD6ZjHaDxfAgHdWYU0yh6m6kF-4IUChkljio5FQjTWa1w&oe=65B20097",
+        "https://scontent.fjnb11-1.fna.fbcdn.net/v/t31.18172-8/1980406_718721484817161_2383619438027902691_o.jpg?_nc_cat=100&ccb=1-7&_nc_sid=4dc865&_nc_ohc=5QUm1uRQ1KcAX-BPoaK&_nc_ht=scontent.fjnb11-1.fna&oh=00_AfB5pw0bGDP-4a449zmeJi36xr7sKjH9LzovSF3jb8cNUg&oe=65B21C96"
+      ]
+    }
+  }
 ]

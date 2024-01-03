@@ -3,6 +3,7 @@ import EventList from './EventList'
 
 const eventData = [
     {
+        id: "5348",
         name: "JDM Car Show", 
         location: {
             country: "South Africa", 
@@ -18,6 +19,7 @@ const eventData = [
         gallery: ["http://placeimg.com/640/480/nature, http://placeimg.com/640/480/transport, http://placeimg.com/640/480/transport "]
     },
     {
+        id:"6764",
         name: "Campfest", 
         location: {
             country: "South Africa", 
@@ -33,6 +35,7 @@ const eventData = [
         gallery: ["http://placeimg.com/640/480/nature, http://placeimg.com/640/480/transport, http://placeimg.com/640/480/transport "]
     },
     {
+        id:"68746",
         name: "LPM Car Show", 
         location: {
             country: "South Africa", 
@@ -51,13 +54,13 @@ const eventData = [
 
 function FutureEvents() {
   return (
-    <> 
+    <ul> 
         {eventData.map((eventEl) =>{
             return(
-                <EventList eventInfo={eventEl} key={eventEl.name}/>
+                <EventList eventInfo={eventEl} tense={'future'} key={eventEl.id}/>
             )
         })}
-    </>
+    </ul>
   )
 }
 
