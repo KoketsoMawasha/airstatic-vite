@@ -31,7 +31,7 @@ const eventData = [
             moreInfo: "http://agitated-span.biz",
             tickets:"http://glittering-honeybee.net",
         }, 
-        heroImg: "https://i.pinimg.com/564x/c3/80/54/c3805456002454d98190123b74c1078e.jpg", 
+        heroImg: "https://vxgjbmpylrvarxxmosxd.supabase.co/storage/v1/object/sign/events/vdub-fest/banner-img.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJldmVudHMvdmR1Yi1mZXN0L2Jhbm5lci1pbWcuanBnIiwiaWF0IjoxNzA0NDA3NDcyLCJleHAiOjE4NjIwODc0NzJ9.vbg6dbELcV4Se036Fsi98Df9gs5RyOV6_CDeSzQJQY0&t=2024-01-04T22%3A36%3A32.755Z", 
         gallery: ["http://placeimg.com/640/480/nature, http://placeimg.com/640/480/transport, http://placeimg.com/640/480/transport "]
     },
     {

@@ -23,7 +23,7 @@ const eventData = [
   {
       id:"6764",
       name: "Campfest", 
-      summary: "Deserunt reiciendis exercitationem et et beatae qui voluptas molestiae. Ea magni eum dolor quas eos nemo sapiente possimus illo. Itaque culpa est corrupti animi. Reprehenderit autem rerum nihil architecto expedita consequatur in iure.",
+      summary: "The event involves a renowned Show & Shine competition which features a variety of categories from over 400 contestants (that are shortlisted to around 120 vehicles via pre-registration) and the show normally establishes the best project cars in the country for the current year. The level of competing vehicles at this event are arguably the most outstanding on the SA scene. The judging panel and entertainment lineup regularly include international personalities. The ultimate Best Of show winner receives a grand prize package that incorporates a trip to one of the largest international counterpart VAG motor shows.",
       location: {
           country: "South Africa", 
           province: "Mpumalanga", 
@@ -34,7 +34,7 @@ const eventData = [
           moreInfo: "http://agitated-span.biz",
           tickets:"http://glittering-honeybee.net",
       }, 
-      heroImg: "https://i.pinimg.com/564x/c3/80/54/c3805456002454d98190123b74c1078e.jpg", 
+      heroImg: "https://vxgjbmpylrvarxxmosxd.supabase.co/storage/v1/object/sign/events/vdub-fest/vdub-tiguan.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJldmVudHMvdmR1Yi1mZXN0L3ZkdWItdGlndWFuLmpwZyIsImlhdCI6MTcwNDQwNzc2NSwiZXhwIjoxODYyMDg3NzY1fQ.hAHcgqlyQyLUUwH1KmOXEK9IoXRxznZSXda25OxJF6s&t=2024-01-04T22%3A41%3A25.415Z", 
       gallery: ["http://placeimg.com/640/480/nature, http://placeimg.com/640/480/transport, http://placeimg.com/640/480/transport "]
   },
   {
@@ -81,26 +81,47 @@ function EventDetails() {
       <img src={event.heroImg} alt="Event banner image" className='w-full max-w-lg mx-auto' />
     </div>
     <div className="event-details mb-4 px-4 max-w-lg mx-auto w-full">
-          <p className="text-white text-2xl py-2  font-body font-bold">{event.name}</p>
-          <div className="flex flex-start justify-start items-center">
-            <img
-              src="/location-icon.png"
-              alt="Location icon"
-              className="h-auto w-3 mr-2"
-            />
-            <p className="text-white text-md font-thin">
-              {/* address field needed */}
-              {`${city}, ${country} `}
-            </p>
-          </div>
-          <div className="flex flex-start justify-start items-center">
-            <img src="/date-icon.png" alt="Address icon" className="h-auto w-3 mr-2" />
-            <p className="text-white text-md font-thin">{event.date.toDateString()}</p>
-          </div>
-          <p className="event-description text-white py-2">
-            {event.summary}
-          </p>
+      <p className="text-white text-2xl py-2  font-body font-bold">{event.name}</p>
+      <div className="flex flex-start justify-start items-center">
+        <img
+          src="/location-icon.png"
+          alt="Location icon"
+          className="h-auto w-3 mr-2"
+        />
+        <p className="text-white text-md font-thin">
+          {/* address field needed */}
+          {`${city}, ${country} `}
+        </p>
+      </div>
+      <div className="flex flex-start justify-start items-center">
+        <img src="/date-icon.png" alt="Address icon" className="h-auto w-3 mr-2" />
+        <p className="text-white text-md font-thin">{event.date.toDateString()}</p>
+      </div>
+      <p className="event-description mb-4 text-white py-2">
+        {event.summary}
+      </p>
+
+      <div className="">
+      <p className="text-white text-2xl py-2 font-body font-bold">Event Gallery</p>
+      <div className="grid grid-cols-2 gap-2">
+        <div className="">
+          <img  src={event.heroImg} alt="Event banner image" className='mx-auto' />
         </div>
+        <div className="">
+          <img  src={event.heroImg} alt="Event banner image" className='mx-auto' />
+        </div>
+        <div className="">
+          <img  src={event.heroImg} alt="Event banner image" className='mx-auto' />
+        </div>
+      <img src={event.heroImg} alt="Event banner image" className='mx-auto' />
+      <img src={event.heroImg} alt="Event banner image" className='mx-auto' />
+      <img src={event.heroImg} alt="Event banner image" className='mx-auto' />
+      </div>
+      </div>
+
+    </div>
+
+
     <div className="event-ticket p-4 w-[calc(100vw-20px)] max-w-lg bg-sky-500 text-center rounded-md fixed left-1/2 -translate-x-1/2 bottom-4">
       <a href={event.links.tickets} className="primary-cta text-white font-medium">
         Get tickets
