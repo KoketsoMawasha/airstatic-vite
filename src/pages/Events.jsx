@@ -11,7 +11,7 @@ function Events() {
     <div className='bg-neutral-900 w-[100vw] min-h-screen flex flex-col'>
         <TopNav />
         <EventsTab/>
-        <div className="content flex flex-col self-start px-4 sm:self-center max-w-sm">
+        <div className="w-full content flex flex-col self-start px-4 sm:self-center max-w-sm">
         <Outlet />
         </div>
             

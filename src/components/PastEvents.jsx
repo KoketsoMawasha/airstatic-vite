@@ -86,7 +86,7 @@ function PastEvents() {
   return (
     <ul>
       {console.log(events)}
-      {eventData.map((eventEl) => {
+      {events.map((eventEl) => {
         return <EventList eventInfo={eventEl} tense="past" key={eventEl.name} />;
       })}
     </ul>

@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import TopNav from '../components/TopNav'
 import { useParams } from 'react-router-dom'
+import supabase from '../services/supabase'
 
 const eventData = [
   {
@@ -64,71 +65,107 @@ const findEvent = (data, idParam) =>{
   });
 }
 
+
 function EventDetails() {
+  const [event, setEvent] = useState();
+  const [isLoading, setIsLoading] = useState(true)
+
+
+  const fetchData = async (eventId) =>{
+    try{
+      let {data, error} = await supabase.from('events').select('*').eq('id', `${eventId}`); 
+      if(data){
+        setEvent(data[0])
+        setIsLoading(false)
+        // console.log(data[0])
+        console.log(event)
+      }
+      if(error){
+        console.error(error)
+        setIsLoading(false)
+      }
+    }catch(err){
+      console.log(err)
+      setIsLoading(false)
+    }
+  }
+
   const idParam = useParams()
   // console.log(idParam.id.slice(1));
   const eventParam = idParam.id.slice(1)
-  console.log(findEvent(eventData, eventParam));
 
-  const event = findEvent(eventData, eventParam)
-  const {city, country} = event.location
+  // const event = findEvent(eventData, eventParam)
   
+  useEffect(()=>{
+    fetchData(eventParam)
+    
+  },[])
 
   return (
     <div className='bg-neutral-900 w-[100vw] min-h-screen flex flex-col pb-28'>
     <TopNav />
+    {console.log(event)}
+    {isLoading && 
+    <div className="w-full h-screen flex flex-col justify-center align-middle text-white text-center">
+      <p className="text-3xl font-heading">Loading...</p>
+    </div>  }
+    
+    {!isLoading && (
+      <>
     <div className="hero-img w-full mb-4">
-      <img src={event.heroImg} alt="Event banner image" className='w-full max-w-lg mx-auto' />
-    </div>
-    <div className="event-details mb-4 px-4 max-w-lg mx-auto w-full">
-      <p className="text-white text-2xl py-2  font-body font-bold">{event.name}</p>
-      <div className="flex flex-start justify-start items-center">
-        <img
-          src="/location-icon.png"
-          alt="Location icon"
-          className="h-auto w-3 mr-2"
-        />
-        <p className="text-white text-md font-thin">
-          {/* address field needed */}
-          {`${city}, ${country} `}
-        </p>
-      </div>
-      <div className="flex flex-start justify-start items-center">
-        <img src="/date-icon.png" alt="Address icon" className="h-auto w-3 mr-2" />
-        <p className="text-white text-md font-thin">{event.date.toDateString()}</p>
-      </div>
-      <p className="event-description mb-4 text-white py-2">
-        {event.summary}
-      </p>
-
-      <div className="">
-      <p className="text-white text-2xl py-2 font-body font-bold">Event Gallery</p>
-      <div className="grid grid-cols-2 gap-2">
-        <div className="">
-          <img  src={event.heroImg} alt="Event banner image" className='mx-auto' />
-        </div>
-        <div className="">
-          <img  src={event.heroImg} alt="Event banner image" className='mx-auto' />
-        </div>
-        <div className="">
-          <img  src={event.heroImg} alt="Event banner image" className='mx-auto' />
-        </div>
-      <img src={event.heroImg} alt="Event banner image" className='mx-auto' />
-      <img src={event.heroImg} alt="Event banner image" className='mx-auto' />
-      <img src={event.heroImg} alt="Event banner image" className='mx-auto' />
-      </div>
-      </div>
-
-    </div>
-
-
-    <div className="event-ticket p-4 w-[calc(100vw-20px)] max-w-lg bg-sky-500 text-center rounded-md fixed left-1/2 -translate-x-1/2 bottom-4">
-      <a href={event.links.tickets} className="primary-cta text-white font-medium">
-        Get tickets
+    <img src={event.heroImg} alt="Event banner image" className='w-full max-w-lg mx-auto' />
+  </div>
+  <div className="event-details mb-4 px-4 max-w-lg mx-auto w-full">
+    <p className="text-white text-2xl py-2  font-body font-bold">{event.name}</p>
+    <div className="flex flex-start justify-start items-center">
+      <img
+        src="/location-icon.png"
+        alt="Location icon"
+        className="h-auto w-3 mr-2"
+      />
+      <a href={`${event.address.googleMaps}`} target="_blank" rel="noreferrer"  className="text-white text-md underline font-thin">
+        {/* address field needed */}
+        {event.address.description || `Address to be confirmed` }
       </a>
     </div>
+    <div className="flex flex-start justify-start items-center text-white font-thin">
+      <img src="/date-icon.png" alt="Address icon" className="h-auto w-3 mr-2" />
+      <p className="text-white text-md font-thin">{new Date(event.date).toDateString()}</p>
+      {/* 12 March 2024 */}
+    </div>
+    <p className="event-description mb-4 text-white py-2">
+      {event.summary}
+    </p>
+
+    <div className="">
+    {event.gallery ? (<p className="text-white text-2xl py-2 font-body font-bold">Event Gallery</p>) :(<p className="text-white text-2xl py-2 font-body font-bold">Event Gallery <span className='text-yellow-500 font-heading text-sm font-extralight'>coming soon</span></p>)}
+    <div className="grid grid-cols-2 gap-2">
+      {/* {console.log(event.gallery)} */}
+      {event.gallery?.map((image)=>{
+        return (
+        <div key={image} className='h-52'>
+          <img src={image} alt="Event banner image" className='mx-auto w-full h-full object-cover bg-cover' />
+        </div>
+        )
+      })}
+    </div>
+    </div>
+
   </div>
+
+
+  <div className="event-ticket p-4 w-[calc(100vw-20px)] max-w-lg bg-sky-500 text-center rounded-md fixed left-1/2 -translate-x-1/2 bottom-4">
+    <a href={event.links.tickets} className="primary-cta text-white font-medium">
+      Get tickets
+    </a>
+  </div>
+      </>
+  )
+    }
+    </div>
   )
 }
 
 export default EventDetails
+
+

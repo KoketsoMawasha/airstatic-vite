@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import EventList from './EventList'
+import supabase from '../services/supabase'
 
 const eventData = [
     {
@@ -53,14 +54,47 @@ const eventData = [
 ]
 
 function FutureEvents() {
-  return (
-    <ul> 
-        {eventData.map((eventEl) =>{
+    const [eventsData, setEventsData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true)
+    // const [eventError, setEventError] = useState()
+    
+    const fetchEvents = async ()=>{
+        try{   
+        let {data: eventsData, error} = await supabase.from('events').select('*');
+        if(error){
+             throw new Error(error)
+        }
+        if(eventsData){
+            setEventsData(eventsData)
+            setIsLoading(false)
+        }
+        }catch(err){
+            console.error(err)
+            setIsLoading(false)
+        }
+        
+        console.log(eventsData)
+    }
+    
+    useEffect(()=>{
+        fetchEvents()
+    },[])
+    
+    return (
+        <div className="w-full h-full">
+        {isLoading && 
+            <div className="w-full h-screen flex flex-col justify-center align-middle text-white text-center">
+            <p className="text-3xl font-heading">Loading...</p>
+            </div>  }
+        {!isLoading && (<ul> 
+        {eventsData.map((eventEl) =>{
             return(
                 <EventList eventInfo={eventEl} tense={'future'} key={eventEl.id}/>
-            )
-        })}
-    </ul>
+                )
+            })}
+    </ul>)}
+            </div>
+        
   )
 }
 
