@@ -123,7 +123,7 @@ function EventDetails() {
         alt="Location icon"
         className="h-auto w-3 mr-2"
       />
-      <a href={`${event.address.googleMaps}`} target="_blank" rel="noreferrer"  className="text-white text-md underline font-thin">
+      <a href={`${event.address.googleMaps}`} target="_blank" rel="noreferrer"  className="text-white text-md underline underline-offset-4  font-thin">
         {/* address field needed */}
         {event.address.description || `Address to be confirmed` }
       </a>
@@ -131,8 +131,13 @@ function EventDetails() {
     <div className="flex flex-start justify-start items-center text-white font-thin">
       <img src="/date-icon.png" alt="Address icon" className="h-auto w-3 mr-2" />
       <p className="text-white text-md font-thin">{new Date(event.date).toDateString()}</p>
-      {/* 12 March 2024 */}
     </div>
+    {event.links.contactNo && (
+      <div className="flex flex-start justify-start items-center text-white font-thin">
+      <img src="/date-icon.png" alt="Address icon" className="h-auto w-3 mr-2" />
+      <p className="text-white text-md font-thin">{event.links.contactNo}</p>
+    </div>
+    )}
     <p className="event-description mb-4 text-white py-2">
       {event.summary}
     </p>
@@ -154,11 +159,13 @@ function EventDetails() {
   </div>
 
 
-  <div className="event-ticket p-4 w-[calc(100vw-20px)] max-w-lg bg-sky-500 text-center rounded-md fixed left-1/2 -translate-x-1/2 bottom-4">
+  {event.links.tickets && (
+    <div className="event-ticket p-4 w-[calc(100vw-20px)] max-w-lg bg-sky-500 text-center rounded-md fixed left-1/2 -translate-x-1/2 bottom-4">
     <a href={event.links.tickets} className="primary-cta text-white font-medium">
       Get tickets
     </a>
   </div>
+  )}
       </>
   )
     }
