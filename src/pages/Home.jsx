@@ -26,16 +26,16 @@ function Home() {
     <div className='bg-neutral-900 w-screen min-h-screen flex flex-col'>
         <TopNav />
         <div className='px-4 flex flex-col mt-6 mb-8'>
-          <VersusSpotlight />
+          {/* <VersusSpotlight /> */}
         {homePosts.map((post)=>{
           if(post.active){
             return (
-              <HeroBlog key={post.id} heading={post.heading} img={post.img} summary={post.summary} link={post.linkTo}/>
+              <HeroBlog key={post.id} heading={post.heading} img={post.img} summary={post.summary} link={post.linkTo} buttonTitle={post.ctaTitle}/>
               )
           }
         })}
         </div>
-        <Footer />
+        {/* <Footer /> */}
     </div>
   )
 }

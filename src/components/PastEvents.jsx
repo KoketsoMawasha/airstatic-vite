@@ -86,7 +86,12 @@ function PastEvents() {
   return (
     <ul>
       {console.log(events)}
-      {events.map((eventEl) => {
+      {events.filter((eventEl)=>{
+        const currentDate = new Date();
+        const eventDate = new Date(eventEl.date);
+
+        return currentDate > eventDate; 
+      }).map((eventEl) => {
         return <EventList eventInfo={eventEl} tense="past" key={eventEl.name} />;
       })}
     </ul>

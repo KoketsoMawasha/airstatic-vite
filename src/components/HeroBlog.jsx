@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Events from '../pages/Events'
 import { NavLink } from 'react-router-dom'
 
-function HeroBlog({heading, img ='https://cdn.midjourney.com/43fc0ccb-7a31-4615-98c9-0708ecb8bf1a/0_2.png', summary, link = '#'}) {
+function HeroBlog({heading, img ='https://cdn.midjourney.com/43fc0ccb-7a31-4615-98c9-0708ecb8bf1a/0_2.png', summary, link = '#', buttonTitle}) {
     return (
         <Link to={link}>
             <div className='max-w-sm flex flex-col justify-center align-middle self-center mb-12 mx-auto'>
@@ -12,7 +12,7 @@ function HeroBlog({heading, img ='https://cdn.midjourney.com/43fc0ccb-7a31-4615-
                     <img src={img} alt="Image of a JDM car show" className="w-full max-w-sm mb-4" />
                 </div>
                 <p className='text-stone-400 mb-4'>{summary}</p>
-                <p to={"/events"} className='text-yellow-500 border border-yellow-500 rounded-md w-fit p-2'>More information</p>
+                {buttonTitle && (<p className='text-yellow-500 border border-yellow-500 rounded-md w-fit p-2'>{buttonTitle}</p>)}
                 
             </div>
         </Link>

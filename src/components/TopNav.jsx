@@ -8,7 +8,6 @@ function TopNav() {
         <ul className='flex justify-evenly align-middle py-4 w-full max-w-sm self-center select-none'>
             <Link to ="/">Home</Link>
             <Link to ="/events">Events</Link>
-            <Link to ="/event">Event</Link>
         </ul>
     </nav>
   )

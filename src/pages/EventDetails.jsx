@@ -121,12 +121,12 @@ function EventDetails() {
       <img
         src="/location-icon.png"
         alt="Location icon"
-        className="h-auto w-3 mr-2"
+        className="h-auto w-3 mr-2 "
       />
-      <a href={`${event.address.googleMaps}`} target="_blank" rel="noreferrer"  className="text-white text-md underline underline-offset-4  font-thin">
+      <div href={`${event.address.googleMaps}`} target="_blank" rel="noreferrer"  className="text-white text-md   font-thin">
         {/* address field needed */}
         {event.address.description || `Address to be confirmed` }
-      </a>
+      </div>
     </div>
     <div className="flex flex-start justify-start items-center text-white font-thin">
       <img src="/date-icon.png" alt="Address icon" className="h-auto w-3 mr-2" />
@@ -134,7 +134,7 @@ function EventDetails() {
     </div>
     {event.links.contactNo && (
       <div className="flex flex-start justify-start items-center text-white font-thin">
-      <img src="/date-icon.png" alt="Address icon" className="h-auto w-3 mr-2" />
+      <img src="/cellphone-icon.png" alt="Cellphone icon" className="h-auto w-3 mr-2" />
       <p className="text-white text-md font-thin">{event.links.contactNo}</p>
     </div>
     )}

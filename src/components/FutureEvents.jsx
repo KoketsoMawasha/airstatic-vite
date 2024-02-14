@@ -87,11 +87,18 @@ function FutureEvents() {
             <p className="text-3xl font-heading">Loading...</p>
             </div>  }
         {!isLoading && (<ul> 
-        {eventsData.map((eventEl) =>{
-            return(
-                <EventList eventInfo={eventEl} tense={'future'} key={eventEl.id}/>
-                )
-            })}
+            {
+    eventsData
+        .filter(eventEl => {
+            const currentDate = new Date();
+            const eventDate = new Date(eventEl.date);
+            return eventDate >= currentDate;
+        })
+        .sort((a, b) => new Date(a.date) - new Date(b.date))
+        .map(eventEl => (
+            <EventList eventInfo={eventEl} tense={'future'} key={eventEl.id}/>
+        ))
+}
     </ul>)}
             </div>
         
