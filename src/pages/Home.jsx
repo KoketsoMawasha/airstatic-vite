@@ -30,7 +30,7 @@ function Home() {
         {homePosts.map((post)=>{
           if(post.active){
             return (
-              <HeroBlog key={post.id} heading={post.heading} img={post.img} summary={post.summary} link={post.linkTo} buttonTitle={post.ctaTitle}/>
+              <HeroBlog key={post.id} heading={post.heading} img={post.img} summary={post.summary} link={post.linkTo} redirect={post.redirect} buttonTitle={post.ctaTitle}/>
               )
           }
         })}

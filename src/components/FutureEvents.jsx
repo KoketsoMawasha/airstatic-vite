@@ -83,7 +83,7 @@ function FutureEvents() {
     return (
         <div className="w-full h-full">
         {isLoading && 
-            <div className="w-full h-screen flex flex-col justify-center align-middle text-white text-center">
+            <div className="w-full h-screen flex flex-col justify-center align-middle mx-auto text-white text-center">
             <p className="text-3xl font-heading">Loading...</p>
             </div>  }
         {!isLoading && (<ul> 
