@@ -18,7 +18,7 @@ function App() {
         <Route path='events/future/:id' element={<EventDetails />}/>
         <Route path='events/past/:id' element={<EventDetails />}/>
         <Route path="events" element={<Events/>}>
-          <Route index element={<Navigate to={'future'} replace={true} />}></Route>
+          <Route index element={<FutureEvents/>}></Route>
           <Route path='future' element={<FutureEvents/>}></Route>
           <Route path='past' element={<PastEvents/>}></Route>
         </Route>
