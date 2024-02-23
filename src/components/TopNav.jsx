@@ -8,7 +8,7 @@ function TopNav() {
         <ul className='grid grid-cols-3 text-center justify-center align-middle pt-4 w-full max-w-sm self-center select-none'>
             <Link to ="/">Home</Link>
             <Link to ="/events">Events</Link>
-            <Link to ="#" className='grid grid-rows-2  '>Marketplace<span className=""><img src="/comin-soon.png" alt="" /></span> </Link>
+            <Link to ="#" className='grid grid-rows-2  '>Marketplace<span className=""><img src="/coming-soon.png" alt="Marketplace tab coming soon" /></span> </Link>
         </ul>
     </nav>
   )
