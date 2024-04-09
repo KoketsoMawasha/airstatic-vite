@@ -27,7 +27,7 @@ function Home() {
         <TopNav />
         <div className='px-4 flex flex-col mt-6 mb-8'>
           {/* <VersusSpotlight /> */}
-        {homePosts.map((post)=>{
+          {homePosts.sort((a,b)=> Number(a.order) - Number(b.order)).map((post)=>{
           if(post.active){
             return (
               <HeroBlog key={post.id} heading={post.heading} img={post.img} summary={post.summary} link={post.linkTo} redirect={post.redirect} buttonTitle={post.ctaTitle}/>

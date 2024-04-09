@@ -61,7 +61,6 @@ const findEvent = (data, idParam) =>{
   return data.find((entry) => {
     const entryId = entry.id.toString()
     return entryId == idParam
-    // console.log(entry.id, idParam)
   });
 }
 
@@ -120,7 +119,7 @@ function EventDetails() {
     <div className="flex flex-start justify-start items-center">
       <img
         src="/location-icon.png"
-        alt="Location icon"
+        alt="car event location icon"
         className="h-auto w-3 mr-2 "
       />
       <div href={`${event.address.googleMaps}`} target="_blank" rel="noreferrer"  className="text-white text-md   font-thin">
@@ -129,12 +128,12 @@ function EventDetails() {
       </div>
     </div>
     <div className="flex flex-start justify-start items-center text-white font-thin">
-      <img src="/date-icon.png" alt="Address icon" className="h-auto w-3 mr-2" />
+      <img src="/date-icon.png" alt=" car event address icon" className="h-auto w-3 mr-2" />
       <p className="text-white text-md font-thin">{new Date(event.date).toDateString()}</p>
     </div>
     {event.links.contactNo && (
       <div className="flex flex-start justify-start items-center text-white font-thin">
-      <img src="/cellphone-icon.png" alt="Cellphone icon" className="h-auto w-3 mr-2" />
+      <img src="/cellphone-icon.png" alt="event contact icon" className="h-auto w-3 mr-2" />
       <p className="text-white text-md font-thin">{event.links.contactNo}</p>
     </div>
     )}
@@ -149,7 +148,7 @@ function EventDetails() {
       {event.gallery?.map((image)=>{
         return (
         <div key={image} className='h-52'>
-          <img src={image} alt="Event banner image" className='mx-auto w-full h-full object-cover bg-cover' />
+          <img src={image} alt="event gallery image" className='mx-auto w-full h-full object-cover bg-cover' />
         </div>
         )
       })}
