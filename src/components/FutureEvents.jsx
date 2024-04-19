@@ -91,8 +91,12 @@ function FutureEvents() {
     eventsData
         .filter(eventEl => {
             const currentDate = new Date();
-            const eventDate = new Date(eventEl.date);
-            return eventDate >= currentDate;
+    currentDate.setHours(0, 0, 0, 0); // Set time to midnight, start of the current day.
+
+    const eventDate = new Date(eventEl.date);
+    eventDate.setHours(0, 0, 0, 0); // Normalize event date to start of the day as well.
+
+    return eventDate >= currentDate;
         })
         .sort((a, b) => new Date(a.date) - new Date(b.date))
         .map(eventEl => (
