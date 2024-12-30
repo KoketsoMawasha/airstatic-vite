@@ -8,7 +8,7 @@ function HeroBlog({ heading, img = 'https://cdn.midjourney.com/43fc0ccb-7a31-461
         <>
             <p className='text-2xl font-heading text-white mb-2'>{heading}</p>
             <div className="heroImg w-full">
-                <img src={img} alt="Image of featured blog post" className="w-full max-w-sm mb-4" />
+                <img src={img} alt="Image of featured blog post" className="w-full max-w-sm mb-4 object-cover" height={300} />
             </div>
             <p className='text-stone-400 mb-4'>{summary}</p>
             {buttonTitle && (<p className='text-yellow-500 border border-yellow-500 rounded-md w-fit p-2'>{buttonTitle}</p>)}

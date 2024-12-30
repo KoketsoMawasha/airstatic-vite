@@ -34,10 +34,10 @@ function TopNav() {
       <path d="M815.254 70.9414L817.427 71.8105L819.6 73.5488L820.469 75.7217H819.6L817.427 73.1143L815.254 70.9414Z"  />
       <path d="M831.768 108.748L832.637 109.183L830.464 111.355L827.856 113.528L826.987 113.094L831.768 108.748Z"  />
       </svg>
-      <ul className='grid grid-cols-3 text-center justify-center align-middle pt-4 w-full max-w-sm self-center select-none'>
-          <Link to ="/">Home</Link>
-          <Link to ="/events">Events</Link>
-          <Link to ="#" className='grid grid-rows-2  '>Marketplace<span className=""><img src="/coming-soon.png" alt="Marketplace tab coming soon" /></span> </Link>
+      <ul className='grid grid-cols-3 text-center justify-center align-middle py-4 w-full max-w-sm self-center select-none'>
+          <Link to ="/" className='font-heading'>Home</Link>
+          <Link to ="/events" className='font-heading'>Events</Link>
+          <Link to ="/marketplace" className='font-heading'>Marketplace</Link>
       </ul>
     </nav>
   )
