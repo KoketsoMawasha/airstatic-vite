@@ -9,6 +9,7 @@ import PageNotFound from './pages/PageNotFound'
 import EventDetails from './pages/EventDetails'
 import PastEvents from './components/PastEvents'
 import FutureEvents from './components/FutureEvents'
+import Marketplace from './pages/Marketplace'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path='events/future/:id' element={<EventDetails />}/>
         <Route path='events/past/:id' element={<EventDetails />}/>
+        <Route path='marketplace' element={<Marketplace />}/>
         <Route path="events" element={<Events/>}>
           <Route index element={<Navigate to={'future'} replace={true} />}></Route>
           <Route path='future' element={<FutureEvents/>}></Route>
