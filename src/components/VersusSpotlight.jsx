@@ -28,7 +28,7 @@ function VersusSpotlight() {
     <div className="mx-auto w-max-sm">
         <div className="w-full max-w-sm mx-auto copy">
         <p className="text-2xl font-heading text-white mb-2">Choose your Fighter!</p>
-        <p className="text-lg text-neutral-300 font-extralight mb-6">Two neck-breaking polos on the stance war stage. Both have it all sleek rims, clean paintwork, detailing and unique impressions...but there can only be one winner. Throw in your vote and rally for the ride that speaks to your stance game. The winner will stay until facing a new challenger next week. 
+        <p className="text-lg text-neutral-300 font-extralight mb-6">Two neck-breaking polos on the stance war stage. Both have it all sleek rims, clean paintwork, detailing and unique impressions...but there can only be one winner. Throw in your vote and rally for the ride that speaks to your stance game. The winner will stay until facing a new challenger next week.
         </p>
         </div>
         <div className='w-full max-w-sm flex flex-col justify-between items-center mb-12 mx-auto'>

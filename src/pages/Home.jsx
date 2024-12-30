@@ -3,7 +3,6 @@ import TopNav from '../components/TopNav'
 import HeroBlog from '../components/HeroBlog'
 import Footer from '../components/Footer'
 import supabase from '../services/supabase'
-import VersusSpotlight from '../components/VersusSpotlight'
 
 
 function Home() {
