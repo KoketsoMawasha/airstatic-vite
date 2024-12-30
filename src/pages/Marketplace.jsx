@@ -1,5 +1,5 @@
 import React from 'react'
-import MarketplaceItem from '../components/marketplace/marketplaceItem'
+import MarketplaceItem from '../components/marketplace/MarketplaceItem'
 import { useEffect,useState } from 'react'
 import TopNav from '../components/TopNav'
 import supabase from '../services/supabase'
