@@ -49,8 +49,8 @@ function MarketplaceItem({ name, desc, location, price, gallery, contact }) {
 
             </div>
             <div className="py-4">
-                <div className="font-bold text-xl">{name}</div>
-                <div className="font-extrabold text-xl mb-4">R{price}</div>
+                <div className="font-bold text-xl text-white">{name}</div>
+                <div className="font-extrabold text-xl mb-4 text-white">R{price}</div>
                 <div className='flex flex-row mb-2'>
                 <img src="/location-icon.png" alt="car event location icon" className="h-auto object-contain w-3 mr-2 "/>
                 <p className="text-white/70 white text-base"> {location}
