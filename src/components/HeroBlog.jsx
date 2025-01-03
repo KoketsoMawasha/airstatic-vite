@@ -21,7 +21,7 @@ function HeroBlog({ heading, img = 'https://cdn.midjourney.com/43fc0ccb-7a31-461
     if (link) {
         return (
             <Link to={link}>
-                <div className='max-w-sm flex flex-col justify-center align-middle self-center mb-12 mx-auto'>
+                <div className='max-w-sm max-h-[420px] flex flex-col justify-center align-middle self-center mb-12 mx-auto'>
                     {InnerContent}
                 </div>
             </Link>

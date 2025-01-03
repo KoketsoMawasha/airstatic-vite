@@ -45,7 +45,7 @@ function MarketplaceItem({ name, desc, location, price, gallery, contact }) {
         <div className="overflow-hidden p-4 mb-8">
             <div className="w-full rounded text-center">
             {gallery?
-            <div><img src={gallery} className='rounded-sm w-full max-h-[420px] object-cover'></img></div>:placeholderImg}
+            <div><img src={gallery} className='rounded-md w-full max-h-[420px] object-cover'></img></div>:placeholderImg}
 
             </div>
             <div className="py-4">
