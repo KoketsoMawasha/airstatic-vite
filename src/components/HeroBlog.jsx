@@ -13,7 +13,7 @@ function HeroBlog({ heading, img = 'https://cdn.midjourney.com/43fc0ccb-7a31-461
                 <img src={img} alt="Image of featured blog post" className="w-full max-w-sm mb-4 object-cover max-h-[420px] rounded-md"   />
             </div>
             <p className='text-stone-400 mb-4'>{summary}</p>
-            {buttonTitle && (<p className='text-yellow-500 border border-yellow-500 rounded-md w-fit p-2'>{buttonTitle}</p>)}
+            {buttonTitle && (<p className='bg-sky-500 font-medium  rounded-md text-center py-2 p-3'>{buttonTitle}</p>)}
         </>
     );
 
