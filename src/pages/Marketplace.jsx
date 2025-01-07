@@ -8,8 +8,7 @@ function Marketplace() {
   const [products, setProducts] = useState([])
 
   const getProducts = async ()=>{
-    let {data, supabaseErr} = await supabase.from('marketplace').select()
-
+    let {data, supabaseErr} = await supabase.from('marketplaceItems').select()
     if(supabaseErr){throw new Error(supabaseErr)}
     if(data){
       setProducts(data)
@@ -25,7 +24,7 @@ function Marketplace() {
       <TopNav/>
       {products &&  <div className='grid items-center justify-center marketplace-items max-w-lg mx-auto'>
         {products.map((product)=>{
-          console.log(product)
+          console.log(product.gallery)
           return (
               <MarketplaceItem key={product.id} name={product.name} desc={product.description} location={product.location} price={product.price} gallery={product.gallery} contact={product.sellerContact}/>
         )
