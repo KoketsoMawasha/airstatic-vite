@@ -23,8 +23,13 @@ function Marketplace() {
     <div className='bg-neutral-900 w-[100vw] min-h-screen flex flex-col'>
       <TopNav/>
       {products &&  <div className='grid items-center justify-center marketplace-items max-w-lg mx-auto'>
-        {products.map((product)=>{
-          console.log(product.gallery)
+        {products.sort((a,b)=>{
+          console.log(a,b)
+          return(
+            new Date(b.created_at) - new Date(a.created_at)
+            
+          )
+        }).map((product)=>{
           return (
               <MarketplaceItem key={product.id} name={product.name} desc={product.description} location={product.location} price={product.price} gallery={product.gallery} contact={product.sellerContact}/>
         )
