@@ -37,7 +37,7 @@ function TopNav() {
       <ul className='grid grid-cols-3 text-center justify-center align-middle py-4 w-full max-w-sm self-center select-none'>
           <Link to ="/" className='font-heading'>Home</Link>
           <Link to ="/events" className='font-heading'>Events</Link>
-          <Link to ="/marketplace" className='font-heading'>Marketplace</Link>
+          <Link to ="https://airstatic.myshopify.com" target='_blank' className='font-heading'>Online Store</Link>
       </ul>
     </nav>
   )
