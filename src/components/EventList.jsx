@@ -7,11 +7,11 @@ function EventList({eventInfo, tense}) {
   const eventDate = new Date(eventInfo.date)
   return (
     <NavLink to={`:${eventInfo.id}`}>
-        <div className=' flex w-full justify-between max-w-md py-3'>
-            <div className="event-heroImg w-1/2">
+        <div className=' grid grid-cols-2 justify-between max-w-md '>
+            <div className="event-heroImg max-h-[17rem]">
             <img src={eventInfo?.heroImg} alt={"Airstatic image"} className='h-auto w-full  rounded-md' />
             </div>
-            <div className="list-content w-1/2 ml-2 flex flex-col justify-start">
+            <div className="list-content  ml-2 flex flex-col justify-start">
                 <div className="list-copy">
                     <p className="title text-white text-md font-bold">{eventInfo?.name}</p>
                     {/* <p className="text-white font-thin">{eventInfo.address || `South Africa`}</p> */}

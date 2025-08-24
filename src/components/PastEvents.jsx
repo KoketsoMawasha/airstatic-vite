@@ -30,7 +30,7 @@ function PastEvents() {
     },[])
   
   return (
-    <ul>
+    <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-6 mt-5 md:mt-8">
       {events.filter((eventEl)=>{
         const currentDate = new Date();
         const eventDate = new Date(eventEl.date);
